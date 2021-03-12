@@ -17,7 +17,7 @@ class PedidoComponent extends Component
     public $pedido_id;
     public $itemsPagina=100,$itemsArtsPagina=100;
     public $codigo, $descripcion, $cantidad, $precio, $articuloUser_id,$lPedido_id;
-    public $precio1, $precio2, $precio3, $precio4, $precio5, $tramo1, $tramo2, $tramo3, $tramo4, $tramo5;
+    public $precio1, $precio2, $precio3, $precio4, $precio5, $precio6, $tramo1, $tramo2, $tramo3, $tramo4, $tramo5, $tramo6;
     public $idUser, $idCabPed;
     protected $cPedidos,$lPedidos;
     public $busqueda, $busquedaArt;
@@ -120,7 +120,7 @@ class PedidoComponent extends Component
             'precio'=>$this->precio
         ]);
         $this->totalizar();
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
         return redirect('Pedidos');
     }
 
@@ -149,11 +149,13 @@ class PedidoComponent extends Component
         $this->precio3=$art->precio3;
         $this->precio4=$art->precio4;
         $this->precio5=$art->precio5;
+        $this->precio6=$art->precio6;
         $this->tramo1=$art->tramo1;
         $this->tramo2=$art->tramo2;
         $this->tramo3=$art->tramo3;
         $this->tramo4=$art->tramo4;
         $this->tramo5=$art->tramo5;
+        $this->tramo6=$art->tramo6;
 
         $this->accion='store';
         
@@ -177,7 +179,7 @@ class PedidoComponent extends Component
         ]);
 
         $this->totalizar();
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
 
         return redirect('Pedidos');
     }
@@ -188,7 +190,8 @@ class PedidoComponent extends Component
         if($num>$art->tramo2)$this->precio=$art->precio3;
         if($num>$art->tramo3)$this->precio=$art->precio4;
         if($num>$art->tramo4)$this->precio=$art->precio5;
-        if($num>$art->tramo5)$this->precio=$art->precio5;
+        if($num>$art->tramo5)$this->precio=$art->precio6;
+        if($num>$art->tramo6)$this->precio=$art->precio6;
 
     }
     public function putEstadoTerminado()
@@ -208,7 +211,7 @@ class PedidoComponent extends Component
 
 //        $this->totalizar();
         Mail::to('domingors@gmail.com')->send(new correo($this->idCabPed));
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
 
 //        $this->render();
 
@@ -221,13 +224,13 @@ class PedidoComponent extends Component
 
         $lPedi->delete();
         $this->totalizar();
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
 
         return redirect('Pedidos');
     }
     public function removeEdit(){
         $this->totalizar();
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
     }
     public function totalizar(){
         $this->idUser=Auth::user()->id;

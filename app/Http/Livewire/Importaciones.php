@@ -71,11 +71,13 @@ class Importaciones extends Component
                     'precio3'=>$row[5],
                     'precio4'=>$row[6],
                     'precio5'=>$row[7],
-                    'tramo1'=>$row[8],
-                    'tramo2'=>$row[9],
-                    'tramo3'=>$row[10],
-                    'tramo4'=>$row[11],
-                    'tramo5'=>$row[12]
+                    'precio6'=>$row[8],
+                    'tramo1'=>$row[9],
+                    'tramo2'=>$row[10],
+                    'tramo3'=>$row[11],
+                    'tramo4'=>$row[12],
+                    'tramo5'=>$row[13],
+                    'tramo5'=>$row[14]
                 ]);
             }else{
                 $art->update([
@@ -86,11 +88,13 @@ class Importaciones extends Component
                     'precio3'=>$row[5],
                     'precio4'=>$row[6],
                     'precio5'=>$row[7],
-                    'tramo1'=>$row[8],
-                    'tramo2'=>$row[9],
-                    'tramo3'=>$row[10],
-                    'tramo4'=>$row[11],
-                    'tramo5'=>$row[12]
+                    'precio6'=>$row[8],
+                    'tramo1'=>$row[9],
+                    'tramo2'=>$row[10],
+                    'tramo3'=>$row[11],
+                    'tramo4'=>$row[12],
+                    'tramo5'=>$row[13],
+                    'tramo5'=>$row[14]
                 ]);
             }
         }
@@ -119,11 +123,13 @@ class Importaciones extends Component
                         'precio3'=>$row[6],
                         'precio4'=>$row[7],
                         'precio5'=>$row[8],
-                        'tramo1'=>$row[8],
-                        'tramo2'=>$row[10],
-                        'tramo3'=>$row[11],
-                        'tramo4'=>$row[12],
-                        'tramo5'=>$row[13]
+                        'precio6'=>$row[9],
+                        'tramo1'=>$row[10],
+                        'tramo2'=>$row[11],
+                        'tramo3'=>$row[12],
+                        'tramo4'=>$row[13],
+                        'tramo5'=>$row[14],
+                        'tramo6'=>$row[15]
                         ]);
                 }else{
                     $artUsr->update([
@@ -134,11 +140,13 @@ class Importaciones extends Component
                         'precio3'=>$row[6],
                         'precio4'=>$row[7],
                         'precio5'=>$row[8],
-                        'tramo1'=>$row[8],
-                        'tramo2'=>$row[10],
-                        'tramo3'=>$row[11],
-                        'tramo4'=>$row[12],
-                        'tramo5'=>$row[13]
+                        'precio6'=>$row[9],
+                        'tramo1'=>$row[10],
+                        'tramo2'=>$row[11],
+                        'tramo3'=>$row[12],
+                        'tramo4'=>$row[13],
+                        'tramo5'=>$row[14],
+                        'tramo6'=>$row[15]
                     ]);
                 }
             }

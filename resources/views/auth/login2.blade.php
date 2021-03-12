@@ -1,5 +1,6 @@
 <x-guest-layout>
     <x-jet-authentication-card>
+    <div class="min-h-screen bg-gray-100 background-size: cover"   Style= "background-image:url('{{ asset('images/a.jpg') }}'); background-size: cover;border-radius: 5px;position:relative">
         <x-slot name="logo">
         </x-slot>
 
@@ -44,5 +45,6 @@
                 </x-jet-button>
             </div>
         </form>
+        </div>
     </x-jet-authentication-card>
 </x-guest-layout>

@@ -23,11 +23,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.038,
             'precio4'=>0.038,
             'precio5'=>0.038,
+            'precio6'=>0.038,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>5000,
-            'tramo5'=>5000
+            'tramo5'=>5000,
+            'tramo6'=>5000
         ]);
         Articulo::create([
             'codigo'=>'w0002',
@@ -38,11 +40,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.064,
             'precio4'=>0.850,
             'precio5'=>0.850,
+            'precio6'=>0.850,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>5000,
-            'tramo5'=>5000
+            'tramo5'=>5000,
+            'tramo6'=>5000
         ]);
         Articulo::create([
             'codigo'=>'w0003',
@@ -53,11 +57,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.164,
             'precio4'=>0.152,
             'precio5'=>0.152,
+            'precio6'=>0.152,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>5000,
-            'tramo5'=>5000
+            'tramo5'=>5000,
+            'tramo6'=>5000
         ]);
         Articulo::create([
             'codigo'=>'w0004',
@@ -68,11 +74,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.049,
             'precio4'=>0.049,
             'precio5'=>0.049,
+            'precio6'=>0.049,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>3000,
-            'tramo5'=>3000
+            'tramo5'=>3000,
+            'tramo6'=>3000
         ]);
         Articulo::create([
             'codigo'=>'w0005',
@@ -83,11 +91,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.051,
             'precio4'=>0.051,
             'precio5'=>0.051,
+            'precio6'=>0.051,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>3000,
-            'tramo5'=>3000
+            'tramo5'=>3000,
+            'tramo6'=>3000
         ]);
         Articulo::create([
             'codigo'=>'w0006',
@@ -98,11 +108,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.094,
             'precio4'=>0.082,
             'precio5'=>0.082,
+            'precio6'=>0.082,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>5000,
-            'tramo5'=>5000
+            'tramo5'=>5000,
+            'tramo6'=>5000
         ]);
         Articulo::create([
             'codigo'=>'w0007',
@@ -113,11 +125,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.150,
             'precio4'=>0.140,
             'precio5'=>0.140,
+            'precio6'=>0.140,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>5000,
-            'tramo5'=>5000
+            'tramo5'=>5000,
+            'tramo6'=>5000
         ]);
         Articulo::create([
             'codigo'=>'w0008',
@@ -128,11 +142,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.165,
             'precio4'=>0.155,
             'precio5'=>0.155,
+            'precio6'=>0.155,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>3000,
             'tramo4'=>5000,
-            'tramo5'=>5000
+            'tramo5'=>5000,
+            'tramo6'=>5000
         ]);
         Articulo::create([
             'codigo'=>'w0009',
@@ -143,11 +159,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.360,
             'precio4'=>0.360,
             'precio5'=>0.360,
+            'precio6'=>0.360,
             'tramo1'=>100,
             'tramo2'=>250,
             'tramo3'=>250,
             'tramo4'=>250,
-            'tramo5'=>250
+            'tramo5'=>250,
+            'tramo6'=>250
         ]);
         Articulo::create([
             'codigo'=>'w0010',
@@ -158,11 +176,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.100,
             'precio4'=>0.065,
             'precio5'=>0.060,
+            'precio6'=>0.060,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>3000
+            'tramo5'=>1000,
+            'tramo6'=>3000
         ]);
         Articulo::create([
             'codigo'=>'w0011',
@@ -173,11 +193,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.145,
             'precio4'=>0.087,
             'precio5'=>0.100,
+            'precio6'=>0.100,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>3000
+            'tramo5'=>1000,
+            'tramo6'=>3000
         ]);
         Articulo::create([
             'codigo'=>'w0012',
@@ -188,11 +210,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.175,
             'precio4'=>0.170,
             'precio5'=>0.150,
+            'precio6'=>0.150,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>3000
+            'tramo5'=>1000,
+            'tramo6'=>3000
         ]);
         Articulo::create([
             'codigo'=>'w0013',
@@ -203,11 +227,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.190,
             'precio4'=>0.170,
             'precio5'=>0.159,
+            'precio6'=>0.159,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>3000
+            'tramo5'=>1000,
+            'tramo6'=>3000
         ]);
         Articulo::create([
             'codigo'=>'w0014',
@@ -218,11 +244,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.095,
             'precio4'=>0.095,
             'precio5'=>0.095,
+            'precio6'=>0.095,
             'tramo1'=>300,
             'tramo2'=>500,
             'tramo3'=>1000,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0015',
@@ -233,11 +261,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.078,
             'precio4'=>0.050,
             'precio5'=>0.050,
+            'precio6'=>0.050,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0016',
@@ -248,11 +278,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.078,
             'precio4'=>0.055,
             'precio5'=>0.055,
+            'precio6'=>0.055,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0017',
@@ -263,11 +295,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.098,
             'precio4'=>0.098,
             'precio5'=>0.098,
+            'precio6'=>0.098,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>300,
             'tramo4'=>300,
-            'tramo5'=>300
+            'tramo5'=>300,
+            'tramo6'=>300
         ]);
         Articulo::create([
             'codigo'=>'w0018',
@@ -278,11 +312,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.110,
             'precio4'=>0.110,
             'precio5'=>0.110,
+            'precio6'=>0.110,
             'tramo1'=>100,
             'tramo2'=>300,
             'tramo3'=>300,
             'tramo4'=>300,
-            'tramo5'=>300
+            'tramo5'=>300,
+            'tramo6'=>300
         ]);
         Articulo::create([
             'codigo'=>'w0019',
@@ -293,11 +329,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.039,
             'precio4'=>0.039,
             'precio5'=>0.039,
+            'precio6'=>0.039,
             'tramo1'=>500,
             'tramo2'=>1000,
             'tramo3'=>1000,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0020',
@@ -308,11 +346,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.098,
             'precio4'=>0.098,
             'precio5'=>0.098,
+            'precio6'=>0.098,
             'tramo1'=>300,
             'tramo2'=>500,
             'tramo3'=>1000,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0021',
@@ -323,11 +363,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.099,
             'precio4'=>0.099,
             'precio5'=>0.099,
+            'precio6'=>0.099,
             'tramo1'=>300,
             'tramo2'=>500,
             'tramo3'=>1000,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0022',
@@ -338,11 +380,13 @@ class ArtSeeder extends Seeder
             'precio3'=>0.110,
             'precio4'=>0.110,
             'precio5'=>0.110,
+            'precio6'=>0.110,
             'tramo1'=>300,
             'tramo2'=>500,
             'tramo3'=>1000,
             'tramo4'=>1000,
-            'tramo5'=>1000
+            'tramo5'=>1000,
+            'tramo6'=>1000
         ]);
         Articulo::create([
             'codigo'=>'w0023',
@@ -353,11 +397,13 @@ class ArtSeeder extends Seeder
             'precio3'=>8.500,
             'precio4'=>8.500,
             'precio5'=>8.500,
+            'precio6'=>8.500,
             'tramo1'=>1,
             'tramo2'=>1,
             'tramo3'=>1,
             'tramo4'=>1,
-            'tramo5'=>1
+            'tramo5'=>1,
+            'tramo6'=>1
         ]);
         Articulo::create([
             'codigo'=>'w0024',
@@ -368,11 +414,13 @@ class ArtSeeder extends Seeder
             'precio3'=>8.955,
             'precio4'=>8.955,
             'precio5'=>8.955,
+            'precio6'=>8.955,
             'tramo1'=>1,
             'tramo2'=>1,
             'tramo3'=>1,
             'tramo4'=>1,
-            'tramo5'=>1
+            'tramo5'=>1,
+            'tramo6'=>1
         ]);
         Articulo::create([
             'codigo'=>'w0025',
@@ -383,11 +431,13 @@ class ArtSeeder extends Seeder
             'precio3'=>15.999,
             'precio4'=>15.999,
             'precio5'=>15.999,
+            'precio6'=>15.999,
             'tramo1'=>100,
             'tramo2'=>100,
             'tramo3'=>100,
             'tramo4'=>100,
-            'tramo5'=>100
+            'tramo5'=>100,
+            'tramo6'=>100
         ]);
         Articulo::create([
             'codigo'=>'w0026',
@@ -398,11 +448,13 @@ class ArtSeeder extends Seeder
             'precio3'=>8.555,
             'precio4'=>8.555,
             'precio5'=>8.555,
+            'precio6'=>8.555,
             'tramo1'=>1,
             'tramo2'=>1,
             'tramo3'=>1,
             'tramo4'=>1,
-            'tramo5'=>1
+            'tramo5'=>1,
+            'tramo6'=>1
         ]);
         Articulo::create([
             'codigo'=>'w0027',
@@ -413,11 +465,13 @@ class ArtSeeder extends Seeder
             'precio3'=>35.000,
             'precio4'=>35.000,
             'precio5'=>35.000,
+            'precio6'=>35.000,
             'tramo1'=>1,
             'tramo2'=>1,
             'tramo3'=>1,
             'tramo4'=>1,
-            'tramo5'=>1
+            'tramo5'=>1,
+            'tramo6'=>1
         ]);
         Articulo::create([
             'codigo'=>'w0028',
@@ -428,11 +482,13 @@ class ArtSeeder extends Seeder
             'precio3'=>16.390,
             'precio4'=>16.390,
             'precio5'=>16.390,
+            'precio6'=>16.390,
             'tramo1'=>1,
             'tramo2'=>1,
             'tramo3'=>1,
             'tramo4'=>1,
-            'tramo5'=>1
+            'tramo5'=>1,
+            'tramo6'=>1
         ]);
 
     }

@@ -23,11 +23,13 @@ class CreateArticulosTable extends Migration
             $table->decimal('precio3',8,3)->default('1.000');
             $table->decimal('precio4',8,3)->default('1.000');
             $table->decimal('precio5',8,3)->default('1.000');
+            $table->decimal('precio6',8,3)->default('1.000');
             $table->integer('tramo1')->default('100');
             $table->integer('tramo2')->default('300');
             $table->integer('tramo3')->default('500');
             $table->integer('tramo4')->default('1000');
             $table->integer('tramo5')->default('3000');
+            $table->integer('tramo6')->default('3000');
             $table->timestamps();
         });
     }

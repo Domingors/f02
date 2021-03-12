@@ -19,10 +19,12 @@ class ArticuloUser extends Model
         'precio3',
         'precio4',
         'precio5',
+        'precio6',
         'tramo1',
         'tramo2',
         'tramo3',
         'tramo4',
         'tramo5',
+        'tramo6',
     ];
 }

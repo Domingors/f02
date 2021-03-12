@@ -15,7 +15,7 @@ class ArticuloUserComponent extends Component
     public $lArtUser_id;
     public $itemsArtsPagina=100,$itemsArtsUserPagina=100;
     public $articulo_id;
-    public $codigo, $descripcion, $cantidad, $precio1, $precio2, $precio3, $precio4, $precio5, $tramo1, $tramo2, $tramo3, $tramo4, $tramo5;
+    public $codigo, $descripcion, $cantidad, $precio1, $precio2, $precio3, $precio4, $precio5, $precio6, $tramo1, $tramo2, $tramo3, $tramo4, $tramo5, $tramo6;
     protected $lArts,$lArtsUser,$usuarios;
     public $idUser;
     public $busquedaArt, $busquedaArtUser;
@@ -29,11 +29,13 @@ class ArticuloUserComponent extends Component
         'precio3'=>'required',
         'precio4'=>'required',
         'precio5'=>'required',
+        'precio6'=>'required',
         'tramo1'=>'required',
         'tramo2'=>'required',
         'tramo3'=>'required',
         'tramo4'=>'required',
         'tramo5'=>'required',
+        'tramo6'=>'required',
     ];
 
     protected $messages=[
@@ -87,13 +89,15 @@ class ArticuloUserComponent extends Component
             'precio3'=>$this->precio3,
             'precio4'=>$this->precio4,
             'precio5'=>$this->precio5,
+            'precio6'=>$this->precio6,
             'tramo1'=>$this->tramo1,
             'tramo2'=>$this->tramo2,
             'tramo3'=>$this->tramo3,
             'tramo4'=>$this->tramo4,
-            'tramo5'=>$this->tramo5
+            'tramo5'=>$this->tramo5,
+            'tramo6'=>$this->tramo6
     ]);
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articulo_id','lArtUser_id','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articulo_id','lArtUser_id','accion']);
         return redirect('ArticulosUser');
     }
 
@@ -110,11 +114,13 @@ class ArticuloUserComponent extends Component
         $this->precio3=$lArtUser->precio3;
         $this->precio4=$lArtUser->precio4;
         $this->precio5=$lArtUser->precio5;
+        $this->precio6=$lArtUser->precio6;
         $this->tramo1=$lArtUser->tramo1;
         $this->tramo2=$lArtUser->tramo2;
         $this->tramo3=$lArtUser->tramo3;
         $this->tramo4=$lArtUser->tramo4;
         $this->tramo5=$lArtUser->tramo5;
+        $this->tramo6=$lArtUser->tramo6;
 
         $this->accion='update';
         
@@ -133,11 +139,13 @@ class ArticuloUserComponent extends Component
         $this->precio3=$art->precio3;
         $this->precio4=$art->precio4;
         $this->precio5=$art->precio5;
+        $this->precio6=$art->precio6;
         $this->tramo1=$art->tramo1;
         $this->tramo2=$art->tramo2;
         $this->tramo3=$art->tramo3;
         $this->tramo4=$art->tramo4;
         $this->tramo5=$art->tramo5;
+        $this->tramo6=$art->tramo6;
 
         $this->accion='store';
         
@@ -160,14 +168,16 @@ class ArticuloUserComponent extends Component
             'precio3'=>$this->precio3,
             'precio4'=>$this->precio4,
             'precio5'=>$this->precio5,
+            'precio6'=>$this->precio6,
             'tramo1'=>$this->tramo1,
             'tramo2'=>$this->tramo2,
             'tramo3'=>$this->tramo3,
             'tramo4'=>$this->tramo4,
-            'tramo5'=>$this->tramo5
+            'tramo5'=>$this->tramo5,
+            'tramo6'=>$this->tramo6
         ]);
 
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articulo_id','lArtUser_id','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articulo_id','lArtUser_id','accion']);
 
 
         return redirect('ArticulosUser');
@@ -178,12 +188,12 @@ class ArticuloUserComponent extends Component
         $lArtUser=ArticuloUser::find($id);
 
         $lArtUser->delete();
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articulo_id','lArtUser_id','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articulo_id','lArtUser_id','accion']);
 
         return redirect('ArticulosUser');
     }
     public function removeEdit(){
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'articulo_id','lArtUser_id','accion']);
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articulo_id','lArtUser_id','accion']);
     }
 
 }

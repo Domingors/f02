@@ -15,7 +15,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Descripcion</label>
-                        <input wire:model='descripcion' id="descripcion" type="text" class="form-control flex" style="width: 1340px;"/>
+                        <input wire:model='descripcion' id="descripcion" type="text" class="form-control flex" style="width: 1600px;"/>
                         @error('descripcion')<p>{{ $message }}</p>@enderror
                     </div>
                     <div class="mb-3">
@@ -34,6 +34,9 @@
                         <label for="" class="form-label">Precio5</label>
                         <input wire:model='precio5' id="precio5"  type="number" step="any" value="0.00" class="form-control"/>
                         @error('precio5')<p>{{ $message }}</p>@enderror
+                        <label for="" class="form-label">Precio6</label>
+                        <input wire:model='precio6' id="precio6"  type="number" step="any" value="0.00" class="form-control"/>
+                        @error('precio6')<p>{{ $message }}</p>@enderror
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Tramo1</label>
@@ -51,6 +54,9 @@
                         <label for="" class="form-label">Tramo5</label>
                         <input wire:model='tramo5' id="tramo5"  type="number" step="any" value="0.00" class="form-control"/>
                         @error('tramo5')<p>{{ $message }}</p>@enderror
+                        <label for="" class="form-label">Tramo6</label>
+                        <input wire:model='tramo6' id="tramo6"  type="number" step="any" value="0.00" class="form-control"/>
+                        @error('tramo6')<p>{{ $message }}</p>@enderror
                     </div>
                     
                     <div class="bg-gray-100 flex p-2  flex items-center justify-between">
@@ -92,8 +98,8 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $art->codigo }}</td>
                                     <td style="width:500px">{{ $art->descripcion }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->precio1 }}."-".{{ $art->precio2 }}."-".{{ $art->precio3 }}."-".{{ $art->precio4 }}."-".{{ $art->precio5 }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->tramo1 }}."-".{{ $art->tramo2 }}."-".{{ $art->tramo3 }}."-".{{ $art->tramo4 }}."-".{{ $art->tramo5 }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->precio1 }}."-".{{ $art->precio2 }}."-".{{ $art->precio3 }}."-".{{ $art->precio4 }}."-".{{ $art->precio5 }}."-".{{ $art->precio6 }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->tramo1 }}."-".{{ $art->tramo2 }}."-".{{ $art->tramo3 }}."-".{{ $art->tramo4 }}."-".{{ $art->tramo5 }}."-".{{ $art->tramo6 }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <a href="#" type="button" wire:click="edit({{ $art }})" class="bg-green-300 hover:gb-green-700 rounded">Editar</a>
                                         <a href="#" type="button" wire:click='destroy({{ $art->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>

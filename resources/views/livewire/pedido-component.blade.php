@@ -28,10 +28,10 @@
                         @error('descripcion')<p>{{ $message }}</p>@enderror
                     </div>
                     <div class="mb-3">
-                        <label id="precios"  class="form-label">Precios: {{ $precio1 }}-{{ $precio2 }}-{{ $precio3 }}-{{ $precio4 }}-{{ $precio5 }}</label>
+                        <label id="precios"  class="form-label">Precios: {{ $precio1 }}-{{ $precio2 }}-{{ $precio3 }}-{{ $precio4 }}-{{ $precio5 }}-{{ $precio6 }}</label>
                     </div>
                     <div class="mb-3">
-                        <label id="tramos"  class="form-label">Tramos:{{ $tramo1 }}-{{ $tramo2 }}-{{ $tramo3 }}-{{ $tramo4 }}-{{ $tramo5 }}</label>
+                        <label id="tramos"  class="form-label">Tramos:{{ $tramo1 }}-{{ $tramo2 }}-{{ $tramo3 }}-{{ $tramo4 }}-{{ $tramo5 }}-{{ $tramo6 }}</label>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Cantidad</label>
