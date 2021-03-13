@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Articulo;
+use App\Models\ArticuloUser;
 use Illuminate\Database\Seeder;
 
-class ArtSeeder extends Seeder
+class ArtUsrSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,9 @@ class ArtSeeder extends Seeder
      */
     public function run()
     {
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>1,
             'codigo'=>'w0001',
             'descripcion'=>'Sobre oficio blanco impreso (120X176)',
             'cantidad'=>1,
@@ -31,7 +33,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>5000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>2,
             'codigo'=>'w0002',
             'descripcion'=>'Sobre cuartilla prolongada blanco impreso (190x250)',
             'cantidad'=>1,
@@ -48,7 +52,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>5000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>3,
             'codigo'=>'w0003',
             'descripcion'=>'Sobre folio prolongado blanco impreso (260x360)',
             'cantidad'=>1,
@@ -65,7 +71,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>5000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>4,
             'codigo'=>'w0004',
             'descripcion'=>'Sobre tipo americano blanco impreso (115x225)',
             'cantidad'=>1,
@@ -82,7 +90,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>3000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>5,
             'codigo'=>'w0005',
             'descripcion'=>'Sobre blanco ventana derecha impreso (115x225)',
             'cantidad'=>1,
@@ -99,7 +109,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>3000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>6,
             'codigo'=>'w0006',
             'descripcion'=>'Bolsa cuartilla prolongada caña impresa (184x261)',
             'cantidad'=>1,
@@ -116,7 +128,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>5000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>7,
             'codigo'=>'w0007',
             'descripcion'=>'Bolsa folio prolongado caña impreso (265x365)',
             'cantidad'=>1,
@@ -133,7 +147,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>5000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>8,
             'codigo'=>'w0008',
             'descripcion'=>'Bolsa folio prolongado blanco impresa (265x365)',
             'cantidad'=>1,
@@ -150,7 +166,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>5000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>9,
             'codigo'=>'w0009',
             'descripcion'=>'Bolsa tipo radiografia impresa (310x410)',
             'cantidad'=>1,
@@ -167,7 +185,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>250,
             'tramo6'=>250
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>10,
             'codigo'=>'w0010',
             'descripcion'=>'Carátula tamaño folio impresa 1 cara en cartulina de 180 gr',
             'cantidad'=>1,
@@ -184,7 +204,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>11,
             'codigo'=>'w0011',
             'descripcion'=>'Carátula tamaño folio impresa dos caras en cartulina de 180 gr',
             'cantidad'=>1,
@@ -201,7 +223,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>12,
             'codigo'=>'w0012',
             'descripcion'=>'Carpeta tamaño doble folio impresa una cara en cartulina de 180 gr',
             'cantidad'=>1,
@@ -218,7 +242,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>13,
             'codigo'=>'w0013',
             'descripcion'=>'Carpeta tamaño doble folio impresa dos caras en cartulina de 180 gr',
             'cantidad'=>1,
@@ -235,7 +261,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>14,
             'codigo'=>'w0014',
             'descripcion'=>'Carpeta doble folio en papel de 80 gr',
             'cantidad'=>1,
@@ -252,7 +280,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>15,
             'codigo'=>'w0015',
             'descripcion'=>'Ficha tamaño DIN A6 en cartulina de 180 gr. Impresa a una cara',
             'cantidad'=>1,
@@ -269,7 +299,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>16,
             'codigo'=>'w0016',
             'descripcion'=>'Ficha tamaño DIN A5 en cartulina de 180 gr. Impresa a una cara',
             'cantidad'=>1,
@@ -286,7 +318,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>17,
             'codigo'=>'w0017',
             'descripcion'=>'Impreso en papel adhesivo tamaño 3x13',
             'cantidad'=>1,
@@ -303,7 +337,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>300,
             'tramo6'=>300
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>18,
             'codigo'=>'w0018',
             'descripcion'=>'Impreso en papel adhesivo tamaño DIN A6',
             'cantidad'=>1,
@@ -320,7 +356,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>300,
             'tramo6'=>300
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>19,
             'codigo'=>'w0019',
             'descripcion'=>'Impreso DIN A4 en papel de 80 gr impresión a una cara',
             'cantidad'=>1,
@@ -337,7 +375,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>20,
             'codigo'=>'w0020',
             'descripcion'=>'Juego de original y una copia impreso en papel copiativo tamaño DIN A4',
             'cantidad'=>1,
@@ -354,7 +394,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>21,
             'codigo'=>'w0021',
             'descripcion'=>'Juego de original y dos copias impreso en papel copiativo tamaño DIN A4',
             'cantidad'=>1,
@@ -371,7 +413,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>22,
             'codigo'=>'w0022',
             'descripcion'=>'Juegos de original y tres copias impreso en papel copiativo tamaño DIN A4',
             'cantidad'=>1,
@@ -388,7 +432,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>23,
             'codigo'=>'w0023',
             'descripcion'=>'Libreto tamaño DIN A4 cerrado con portada en cartulina de 180 gr impreso en dos tintas con 17 hojas en papel de 180 gr.',
             'cantidad'=>1,
@@ -405,7 +451,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1,
             'tramo6'=>1
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>24,
             'codigo'=>'w0024',
             'descripcion'=>'libreto tamaño DIN A5 cerrado con portada en cartulina mate de 300 gr impreso a color con 18 hojas en papel de 80 gr',
             'cantidad'=>1,
@@ -422,7 +470,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1,
             'tramo6'=>1
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>25,
             'codigo'=>'w0025',
             'descripcion'=>'Saludas en papel verjurado de 100 gr tamaño DIN A5',
             'cantidad'=>1,
@@ -439,7 +489,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>100,
             'tramo6'=>100
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>26,
             'codigo'=>'w0026',
             'descripcion'=>'Talonario de transporte-taxi de original y dos copias en papel copiativo DIN A4',
             'cantidad'=>1,
@@ -456,7 +508,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1,
             'tramo6'=>1
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>27,
             'codigo'=>'w0027',
             'descripcion'=>'Impresión y encuadernacion hasta 400 pag.por tomo. Impreso en 4/4 tintas sobre papel de 80 gr.con acabado laminado mate. Diseño y maquetación portada.',
             'cantidad'=>1,
@@ -473,7 +527,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1,
             'tramo6'=>1
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>10,
+            'articulo_id'=>28,
             'codigo'=>'w0028',
             'descripcion'=>'Impresión y encuadernacion hasta 200 pag.por tomo. Impreso en 4/4 tintas sobre papel de 80 gr.con acabados laminado mate. Diseño y maquetación portada.',
             'cantidad'=>1,
@@ -490,7 +546,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1,
             'tramo6'=>1
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>29,
             'codigo'=>'w0029',
             'descripcion'=>'Sobre comercial caña impreso a 2/0 tinta 120x176',
             'cantidad'=>1,
@@ -507,7 +565,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>30,
             'codigo'=>'w0030',
             'descripcion'=>'Sobre comercial blanco auto adhesivo impreso a 2/0 tintas 120x176',
             'cantidad'=>1,
@@ -524,7 +584,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>31,
             'codigo'=>'w0031',
             'descripcion'=>'Sobre comercial blanco auto adhesivo impreso a 2/0 tintas 184x261',
             'cantidad'=>1,
@@ -541,7 +603,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>32,
             'codigo'=>'w0032',
             'descripcion'=>'Sobre blanco folio impreso a 2 tinta 250x353',
             'cantidad'=>1,
@@ -558,7 +622,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>33,
             'codigo'=>'w0033',
             'descripcion'=>'Bolsa kraf k-26 cuarto impresos a 2/0 tintas 184x261',
             'cantidad'=>1,
@@ -575,7 +641,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>34,
             'codigo'=>'w0034',
             'descripcion'=>'Bolsa kraf k-32 folio impresos a 2/0 tintas 250x353',
             'cantidad'=>1,
@@ -592,7 +660,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>35,
             'codigo'=>'w0035',
             'descripcion'=>'Tarjetas papel adhesivo tamaño 18x7 cm fondo color',
             'cantidad'=>1,
@@ -609,7 +679,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>36,
             'codigo'=>'w0036',
             'descripcion'=>'Tarjetas papel adhesivo tamaño 14x7 cm fondo color',
             'cantidad'=>1,
@@ -626,7 +698,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>37,
             'codigo'=>'w0037',
             'descripcion'=>'Tarjetas papel adhesivo tamaño 6x4 cm fondo color',
             'cantidad'=>1,
@@ -643,7 +717,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>1000,
             'tramo6'=>1000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>38,
             'codigo'=>'w0038',
             'descripcion'=>'Notificación/citación impresos sobre papel auto copiativo 1 tinta cara formato DIN A5, original y copia',
             'cantidad'=>1,
@@ -660,7 +736,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>60,
             'tramo6'=>60
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>39,
             'codigo'=>'w0039',
             'descripcion'=>'Notificación/citación impresos sobre papel auto copiativo 1 tinta cara formato DIN A4, original y 3 copia',
             'cantidad'=>1,
@@ -677,7 +755,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>60,
             'tramo6'=>60
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>40,
             'codigo'=>'w0040',
             'descripcion'=>'Carpetas impresas sobre papel lito de 80 grs. Impresas a una cara DIN A3',
             'cantidad'=>1,
@@ -694,7 +774,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>3000,
             'tramo6'=>3000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>41,
             'codigo'=>'w0041',
             'descripcion'=>'Carpetas impresas sobre cartulina de 240 grs.1 cara 1 tinta formato doble folio',
             'cantidad'=>1,
@@ -711,7 +793,9 @@ class ArtSeeder extends Seeder
             'tramo5'=>5000,
             'tramo6'=>10000
         ]);
-        Articulo::create([
+        ArticuloUser::create([
+            'user_id'=>20,
+            'articulo_id'=>42,
             'codigo'=>'w0042',
             'descripcion'=>'Portadas impresas sobre cartulina de 240 grs. 1 cara 1 tinta formato folio',
             'cantidad'=>1,
