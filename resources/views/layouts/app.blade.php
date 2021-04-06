@@ -20,7 +20,7 @@
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
-        <div class="min-h-screen bg-gray-100 background-size: cover"   Style= "background-image:url('{{ asset('images/a.jpg') }}'); background-size: cover;border-radius: 5px;position:relative">
+        <div class="min-h-screen bg-gray-100 background-size: cover"   Style= "background-image:url('{{ asset('images/b.jpg') }}'); background-size: cover;border-radius: 5px;position:relative">
             @livewire('navigation-menu')
 
             <!-- Page Heading
