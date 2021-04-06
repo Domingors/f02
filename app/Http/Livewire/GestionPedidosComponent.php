@@ -58,19 +58,19 @@ class GestionPedidosComponent extends Component
     }
     public function reloadPeds(){
         $this->estados=[[1,'Incompleto'],[2,'Terminado'],[3,'Entregado']];
-
+/*
         $this->cPedidos=DB::table('pedidos')
         ->Join('l_pedidos', 'pedidos.id', '=', 'l_pedidos.pedido_id')
         ->where('pedidos.user_id',$this->idUser)
         ->Where('pedidos.estado',$this->estado)
         ->orderBy('pedidos.id','DESC')
         ->paginate();
-/*
+*/
         $this->cPedidos=Pedido::orderBy('id','desc')
         ->where('user_id',$this->idUser)
         ->Where('estado',$this->estado)
         ->paginate();
-*/
+
         if(!empty(($this->cPedidos)[0])){
             if($this->idCabPed==null)
             $this->idCabPed=($this->cPedidos)[0]->id;

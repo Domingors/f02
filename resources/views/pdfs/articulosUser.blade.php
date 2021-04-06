@@ -17,8 +17,8 @@
                     <tr>
                         <td style="width:500px">{{ $artUser->codigo }}</td>
                         <td style="width:500px">{{ $artUser->descripcion }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->precio1 }}."-".{{ $artUser->precio2 }}."-".{{ $artUser->precio3 }}."-".{{ $artUser->precio4 }}."-".{{ $artUser->precio5 }}."-".{{ $artUser->precio6 }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->tramo1 }}."-".{{ $artUser->tramo2 }}."-".{{ $artUser->tramo3 }}."-".{{ $artUser->tramo4 }}."-".{{ $artUser->tramo5 }}."-".{{ $artUser->tramo6 }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->precio1 }}-{{ $artUser->precio2 }}-{{ $artUser->precio3 }}-{{ $artUser->precio4 }}-{{ $artUser->precio5 }}-{{ $artUser->precio6 }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->tramo1 }}-{{ $artUser->tramo2 }}-{{ $artUser->tramo3 }}-{{ $artUser->tramo4 }}-{{ $artUser->tramo5 }}-{{ $artUser->tramo6 }}</td>
                     </tr>
                 @endforeach
             @endif

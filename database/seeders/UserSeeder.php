@@ -40,13 +40,13 @@ class UserSeeder extends Seeder
         User::create([
             'id'=>10,
             'name'=>'SC',
-            'email'=>'santcruz@1.es',
+            'email'=>'santacruz@1.es',
             'password'=>bcrypt('12345678')
         ]);
         User::create([
             'id'=>20,
-            'name'=>'LP',
-            'email'=>'laspalmas@1.es',
+            'name'=>'GC',
+            'email'=>'grancanaria@1.es',
             'password'=>bcrypt('12345678')
         ]);
     }

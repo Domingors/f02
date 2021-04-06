@@ -181,7 +181,7 @@ class ArtSeeder extends Seeder
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>1000,
+            'tramo5'=>3000,
             'tramo6'=>3000
         ]);
         Articulo::create([
@@ -198,7 +198,7 @@ class ArtSeeder extends Seeder
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>1000,
+            'tramo5'=>3000,
             'tramo6'=>3000
         ]);
         Articulo::create([
@@ -215,7 +215,7 @@ class ArtSeeder extends Seeder
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>1000,
+            'tramo5'=>3000,
             'tramo6'=>3000
         ]);
         Articulo::create([
@@ -232,7 +232,7 @@ class ArtSeeder extends Seeder
             'tramo2'=>300,
             'tramo3'=>500,
             'tramo4'=>1000,
-            'tramo5'=>1000,
+            'tramo5'=>3000,
             'tramo6'=>3000
         ]);
         Articulo::create([

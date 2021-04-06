@@ -19,6 +19,7 @@ class PedidoComponent extends Component
     public $codigo, $descripcion, $cantidad, $precio, $articuloUser_id,$lPedido_id;
     public $precio1, $precio2, $precio3, $precio4, $precio5, $precio6, $tramo1, $tramo2, $tramo3, $tramo4, $tramo5, $tramo6;
     public $idUser, $idCabPed;
+    public $p;
     protected $cPedidos,$lPedidos;
     public $busqueda, $busquedaArt;
     public $accion='store';
@@ -46,39 +47,22 @@ class PedidoComponent extends Component
     {
         $this->idUser=Auth::user()->id;
 
-        $this->cPedidos=Pedido::orderBy('id','desc')
-        ->where('user_id',$this->idUser)
-        ->Where('estado',1)
-        ->first();
-
+        $this->verUltCPedido();
 
         if(!empty($this->cPedidos)){
-            $this->idCabPed=$this->cPedidos->id;
-
-            $this->lPedidos=LPedido::orderBy('id','desc')
-            ->Where('pedido_id',$this->idCabPed)
-            ->Where('descripcion','LIKE',"%{$this->busqueda}%")
-            ->paginate($this->itemsPagina);
-
-//            $arts=ArticuloUser::where('user_id',$this->idUser)
-//            ->Where('descripcion','LIKE',"%{$this->busquedaArt}%")
-//            ->paginate($this->itemsArtsPagina);
-//            $lPeds=$this->lPedidos;
-//            $cPeds=$this->cPedidos;
-//            $this->totalizar();
-//            return view('livewire.pedido-component',compact('lPeds','cPeds','arts'));
+            $this->verLPedidos();
+            if(!isset($this->lPedidos) || $this->lPedidos==null){
+                $cPedi=Pedido::find($this->idCabPed);
+                $cPedi->delete();
+                $this->verUltCPedido();
+                if(!empty($this->cPedidos)){
+                    $this->verLPedidos();
+                }else{
+                    $this->nuevoPedido();
+                }                
+            }
         }else{
-            Pedido::create([
-                'user_id'=>$this->idUser,
-            ]);
             $this->nuevoPedido();
-//            if(empty($this->cPedidos)){
-//                $arts=ArticuloUser::where('user_id',$this->idUser)->paginate($this->itemsArtsPagina);
-//                $lPeds=$this->lPedidos;
-//                $cPeds=$this->cPedidos;
-//                $this->totalizar();
-//                return view('livewire.pedido-component',compact('lPeds','cPeds','arts'));
-//            }    
         }
         $arts=ArticuloUser::where('user_id',$this->idUser)
         ->Where('descripcion','LIKE',"%{$this->busquedaArt}%")
@@ -90,27 +74,38 @@ class PedidoComponent extends Component
         return view('livewire.pedido-component',compact('lPeds','cPeds','arts'));
 
     }
-    public function nuevoPedido(){
+    public function nuevoPedido()
+    {
+        Pedido::create(['user_id'=>$this->idUser,]);
+        
+        $this->verUltCPedido();
+    }
+    public function verUltCPedido()
+    {
         $this->cPedidos=Pedido::orderBy('id','desc')
         ->where('user_id',$this->idUser)
         ->Where('estado',1)
         ->first();
-
-
-        if(!empty($cPedidos)){
-            $this->idCabPed=$this->cPedidos->id;
-
-            $this->lPedidos=LPedido::orderBy('id','desc')
-            ->Where('pedido_id',$this->idCabPed)
-            ->Where('descripcion','LIKE',"%{$this->busqueda}%")
-            ->paginate($this->itemsPagina);
-        }
-
     }
+    public function verLPedidos()
+    {
+        $this->idCabPed=$this->cPedidos->id;
+
+        $this->lPedidos=LPedido::orderBy('id','desc')
+        ->Where('pedido_id',$this->idCabPed)
+        ->Where('descripcion','LIKE',"%{$this->busqueda}%")
+        ->paginate($this->itemsPagina);
+    }
+
+    public function store1(){$this->verPrecio(1);$this->store();}
+    public function store2(){$this->verPrecio(2);$this->store();}
+    public function store3(){$this->verPrecio(3);$this->store();}
+    public function store4(){$this->verPrecio(4);$this->store();}
+    public function store5(){$this->verPrecio(5);$this->store();}
+    public function store6(){$this->verPrecio(6);$this->store();}
     public function store()
     {
         $this->validate();
-        $this->verPrecio($this->cantidad);
         LPedido::create([
             'pedido_id'=>$this->pedido_id,
             'articuloUser_id'=>$this->articuloUser_id,
@@ -183,37 +178,30 @@ class PedidoComponent extends Component
 
         return redirect('Pedidos');
     }
-    public function verPrecio(int $num){
+    public function verPrecio($p){
         $art=ArticuloUser::find($this->articuloUser_id);
-        $this->precio=$art->precio1;
-        if($num>$art->tramo1)$this->precio=$art->precio2;
-        if($num>$art->tramo2)$this->precio=$art->precio3;
-        if($num>$art->tramo3)$this->precio=$art->precio4;
-        if($num>$art->tramo4)$this->precio=$art->precio5;
-        if($num>$art->tramo5)$this->precio=$art->precio6;
-        if($num>$art->tramo6)$this->precio=$art->precio6;
+        $this->precio=$art->precio1;$this->cantidad=$art->tramo1;
+        if($p==2){$this->precio=$art->precio2;$this->cantidad=$art->tramo2;}
+        if($p==3){$this->precio=$art->precio3;$this->cantidad=$art->tramo3;}
+        if($p==4){$this->precio=$art->precio4;$this->cantidad=$art->tramo4;}
+        if($p==5){$this->precio=$art->precio5;$this->cantidad=$art->tramo5;}
+        if($p==6){$this->precio=$art->precio6;$this->cantidad=$art->tramo6;}
 
     }
     public function putEstadoTerminado()
     {
-        /*
-        $Ped=Pedido::where('id',$this->idCabPed)->first();
-        if($Ped!=null && !empty($Ped)){
-            $Ped->estado=2;
-            $Ped->save();
-        }
-*/
         $Ped=Pedido::find($this->idCabPed);
 
         $Ped->update([
             'estado'=>2
         ]);
 
-//        $this->totalizar();
-        Mail::to('pedidos@laesperanzaimpresores.com')->send(new correo($this->idCabPed));
-        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
+        $artsPedi=LPedido::where('pedido_id',$this->idCabPed)->get();
 
-//        $this->render();
+
+//        $this->totalizar();
+        Mail::to('pedidos@laesperanzaimpresores.com')->send(new correo($this->idCabPed,$artsPedi));
+        $this->reset(['codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
 
         return redirect('Pedidos');
     }

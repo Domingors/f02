@@ -98,8 +98,8 @@
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $art->codigo }}</td>
                                     <td style="width:500px">{{ $art->descripcion }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->precio1 }}."-".{{ $art->precio2 }}."-".{{ $art->precio3 }}."-".{{ $art->precio4 }}."-".{{ $art->precio5 }}."-".{{ $art->precio6 }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->tramo1 }}."-".{{ $art->tramo2 }}."-".{{ $art->tramo3 }}."-".{{ $art->tramo4 }}."-".{{ $art->tramo5 }}."-".{{ $art->tramo6 }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->precio1 }}-{{ $art->precio2 }}-{{ $art->precio3 }}-{{ $art->precio4 }}-{{ $art->precio5 }}-{{ $art->precio6 }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $art->tramo1 }}-{{ $art->tramo2 }}-{{ $art->tramo3 }}-{{ $art->tramo4 }}-{{ $art->tramo5 }}-{{ $art->tramo6 }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <a href="#" type="button" wire:click="edit({{ $art }})" class="bg-green-300 hover:gb-green-700 rounded">Editar</a>
                                         <a href="#" type="button" wire:click='destroy({{ $art->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>

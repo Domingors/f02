@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
@@ -11,15 +12,17 @@ class correo extends Mailable
 {
     use Queueable, SerializesModels;
     public $nPed;
+    public $artsPedi;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(int $nPed)
+    public function __construct(int $nPed, Collection $artsPedi)
     {
         $this->nPed=$nPed;
+        $this->artsPedi=$artsPedi;
     }
 
     /**
@@ -30,6 +33,7 @@ class correo extends Mailable
     public function build()
     {
         $num=$this->nPed;
-        return $this->view('mails.correo',compact('num'));
+        $artsPedi=$this->artsPedi;
+        return $this->view('mails.correo',compact('num','artsPedi'));
     }
 }

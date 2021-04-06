@@ -21,8 +21,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(ArtSeeder::class);
         $this->call(ArtUsrSeeder::class);
+        /*
         Pedido::factory(10)->create();
         LPedido::factory(10)->create();
+        */
 
     }
 }

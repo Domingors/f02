@@ -95,7 +95,7 @@
                         @if($arts != null)
                             @foreach ($arts as $art)
                                 <tr>
-                                    <td title='Precios: [{{ $art->precio1 }}."-".{{ $art->precio2 }}."-".{{ $art->precio3 }}."-".{{ $art->precio4 }}."-".{{ $art->precio5 }}."-".{{ $art->precio6 }}]    Tramos: [{{ $art->tramo1 }}."-".{{ $art->tramo2 }}."-".{{ $art->tramo3 }}."-".{{ $art->tramo4 }}."-".{{ $art->tramo5 }}."-".{{ $art->tramo6 }}]'>{{ $art->descripcion }}</td>
+                                    <td title='Precios: [{{ $art->precio1 }}-{{ $art->precio2 }}-{{ $art->precio3 }}-{{ $art->precio4 }}-{{ $art->precio5 }}-{{ $art->precio6 }}]    Tramos: [{{ $art->tramo1 }}-{{ $art->tramo2 }}-{{ $art->tramo3 }}-{{ $art->tramo4 }}-{{ $art->tramo5 }}-{{ $art->tramo6 }}]'>{{ $art->descripcion }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <a href="#" type="button" wire:click="editArt({{ $art }})" class="bg-blue-300 hover:gb-blue-500 rounded">Editar</a>
                                     </td>
@@ -122,7 +122,7 @@
                         @if($artsUser != null)
                             @foreach ($artsUser as $artUser)
                                 <tr>
-                                    <td title='Precios: [{{ $artUser->precio1 }}."-".{{ $artUser->precio2 }}."-".{{ $artUser->precio3 }}."-".{{ $artUser->precio4 }}."-".{{ $artUser->precio5 }}."-".{{ $artUser->precio6 }}]    Tramos: [{{ $artUser->tramo1 }}."-".{{ $artUser->tramo2 }}."-".{{ $artUser->tramo3 }}."-".{{ $artUser->tramo4 }}."-".{{ $artUser->tramo5 }}."-".{{ $artUser->tramo6 }}]'>{{ $artUser->descripcion }}</td>
+                                    <td title='Precios: [{{ $artUser->precio1 }}-{{ $artUser->precio2 }}-{{ $artUser->precio3 }}-{{ $artUser->precio4 }}-{{ $artUser->precio5 }}-{{ $artUser->precio6 }}]    Tramos: [{{ $artUser->tramo1 }}-{{ $artUser->tramo2 }}-{{ $artUser->tramo3 }}-{{ $artUser->tramo4 }}-{{ $artUser->tramo5 }}-{{ $artUser->tramo6 }}]'>{{ $artUser->descripcion }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <a href="#" type="button" wire:click="editArtUser({{ $artUser }})" class="bg-green-300 hover:gb-green-700 rounded">Editar</a>
                                         <a href="#" type="button" wire:click='destroy({{ $artUser->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>
