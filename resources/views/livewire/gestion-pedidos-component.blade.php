@@ -45,7 +45,15 @@
     <div class="container mx-auto">
         <div class="bg-gray-50 px-4 py-3 border border-gray-200">
             <div class="bg-white px-4 py-3 border border-gray-200">
-                <h2 align="center"><big>Pendiente de servir</big></h2>
+                @if($estado==1)
+                    <h2 align="center"><big>Pedidos incompletos</big></h2>
+                @endif
+                @if($estado==2)
+                    <h2 align="center"><big>Pedidos terminados</big></h2>
+                @endif
+                @if($estado==3)
+                    <h2 align="center"><big>Pedidos entregados</big></h2>
+                @endif
                 <table class="min-w-full divide-y divide-gray-200" id="articulos">
                     <thead class="bg-green-50 border-b">
                         <tr>
@@ -66,20 +74,34 @@
                                         @if($isAdmin)
                                             @if($estado==1)
                                                 <a href="#" type="button" wire:click="putEstadoEntregado({{ $cPed->id }})" class="bg-green-200 hover:gb-green-700 rounded">Marcar entregado</a>
-                                                <a href="#" type="button" wire:click="putEstadoTerminado({{ $cPed->id }})" class="bg-green-300 hover:gb-green-700 rounded">Marcar terminado</a>
+                                                @if($isJ)
+                                                    <a href="#" type="button" wire:click="putEstadoTerminado({{ $cPed->id }})" class="bg-green-300 hover:gb-green-700 rounded">Marcar terminado</a>
+                                                @endif
                                             @endif
                                             @if($estado==2)
                                                 <a href="#" type="button" wire:click="putEstadoEntregado({{ $cPed->id }})" class="bg-green-200 hover:gb-green-700 rounded">Marcar entregado</a>
                                                 <a href="#" type="button" wire:click="putEstadoIncompleto({{ $cPed->id }})" class="bg-green-100 hover:gb-green-700 rounded">Marcar incompleto</a>
                                             @endif
                                             @if($estado==3)
-                                                <a href="#" type="button" wire:click="putEstadoTerminado({{ $cPed->id }})" class="bg-green-300 hover:gb-green-700 rounded">Marcar terminado</a>
+                                                @if($isJ)
+                                                    <a href="#" type="button" wire:click="putEstadoTerminado({{ $cPed->id }})" class="bg-green-300 hover:gb-green-700 rounded">Marcar terminado</a>
+                                                @endif
                                                 <a href="#" type="button" wire:click="putEstadoIncompleto({{ $cPed->id }})" class="bg-green-100 hover:gb-green-700 rounded">Marcar incompleto</a>
+                                            @endif
+                                        @else
+                                            @if($isJ)
+                                                @if($estado==1)
+                                                    <a href="#" type="button" wire:click="putEstadoTerminado({{ $cPed->id }})" class="bg-green-300 hover:gb-green-700 rounded">Marcar terminado</a>
+                                                @endif
                                             @endif
                                         @endif
                                         <a href="artPediPdf/{{ $cPed->id }}" type="button" wire:click='makePdf({{ $cPed->id }})' class="bg-blue-300 hover:gb-blue-700 rounded">Generar pdf</a>
                                         @if($isAdmin)
                                             <a href="#" type="button" wire:click='destroy({{ $cPed->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>
+                                        @else
+                                            @if($isJ && $estado==1)
+                                                <a href="#" type="button" wire:click='destroy({{ $cPed->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>
+                                            @endif
                                         @endif
                                     </td>
                                 </tr>

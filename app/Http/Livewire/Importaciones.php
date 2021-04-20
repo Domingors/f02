@@ -11,6 +11,8 @@ use App\Models\ArticuloUser;
 use App\Models\User;
 use Psy\Command\WhereamiCommand;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class Importaciones extends Component
 {
@@ -28,6 +30,24 @@ class Importaciones extends Component
     {
         return view('livewire.importArtUsr-component');
     }
+    public function upPdf(Request $request)
+    {
+      //obtenemos el campo file definido en el formulario
+      $file = $request->file('pdf');
+      $id=$request->idx;
+
+      //obtenemos el nombre del archivo
+//      $nombre = $file->getClientOriginalName();
+      $nombre = $id.'.pdf';
+
+      //indicamos que queremos guardar un nuevo archivo en el disco local
+      Storage::disk('local')->put($nombre,  File::get($file));
+
+        //Recibimos el archivo y lo guardamos en la carpeta storage/app/public
+//        $request->file('pdf')->store('public');
+        return redirect('Pedidos');
+    }
+
     public function parseImportArt(CsvImportRequest $request)
     {
         $path = $request->file('csv_file')->getRealPath();

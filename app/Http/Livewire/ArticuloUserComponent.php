@@ -46,10 +46,12 @@ class ArticuloUserComponent extends Component
 
     public function render()
     {
-        if($this->idUser==null)
-        $this->idUser=Auth::user()->id;
+//        if($this->idUser==null)
+//        $this->idUser=Auth::user()->id;
 
-        $this->usuarios=User::all();
+        $this->usuarios=User::where('is_jefe',true)->get();
+        if($this->idUser==null)
+            $this->idUser=$this->usuarios[0]->id;
 
         $this->reload();
         $users=$this->usuarios;

@@ -7,7 +7,7 @@
             <tr>
                 <th style="width:500px">Código</th>
                 <th style="width:500px">Descripción</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precios</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precios </th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tramos</th>
             </tr>
         </thead>
@@ -17,7 +17,7 @@
                     <tr>
                         <td style="width:500px">{{ $artUser->codigo }}</td>
                         <td style="width:500px">{{ $artUser->descripcion }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->precio1 }}-{{ $artUser->precio2 }}-{{ $artUser->precio3 }}-{{ $artUser->precio4 }}-{{ $artUser->precio5 }}-{{ $artUser->precio6 }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->precio1 }}-{{ $artUser->precio2 }}-{{ $artUser->precio3 }}-{{ $artUser->precio4 }}-{{ $artUser->precio5 }}-{{ $artUser->precio6 }} </td>
                         <td class="px-6 py-4 whitespace-nowrap">{{ $artUser->tramo1 }}-{{ $artUser->tramo2 }}-{{ $artUser->tramo3 }}-{{ $artUser->tramo4 }}-{{ $artUser->tramo5 }}-{{ $artUser->tramo6 }}</td>
                     </tr>
                 @endforeach

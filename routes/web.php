@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\UsuarioComponent;
 use App\Http\Livewire\ArticuloComponent;
 use App\Http\Livewire\ArticuloUserComponent;
 use App\Http\Livewire\GestionPedidosComponent;
@@ -26,6 +27,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('auth.login2');
 });
+Route::get('Usuarios', UsuarioComponent::class)->name('usuarios');
 Route::get('User', UserTable::class)->name('user');
 Route::get('GestionPedidos', GestionPedidosComponent::class)->name('gestionPedidos');
 Route::get('Pedidos', PedidoComponent::class)->name('pedidos');
@@ -42,3 +44,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('Importaciones', Importaciones::class)->name('importaciones');
 Route::post('ImportArt_parse', [Importaciones::class,'parseImportArt'])->name('importArt_parse');
 Route::post('ImportArtUsr_parse', [Importaciones::class,'parseImportArtUsr'])->name('importArtUsr_parse');
+
+Route::post('upPdf', [Importaciones::class,'upPdf'])->name('upPdf');

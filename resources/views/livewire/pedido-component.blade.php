@@ -67,9 +67,11 @@
                 </div>
                 <div class="bg-white-500 rounded-lb shadow overflow-hiden p-4">
                     @if($lPeds != null)
-                        <div class="flex flex-col p-2 mx-10">
-                            <button wire:click='putEstadoTerminado' type="submmit" class="aling-center border-gray-400 bg-red-300 hover:gb-red-500 rounded" tabindex="10">Marcar como terminado</button>
-                        </div>
+                        @if ($isJ)
+                            <div class="flex flex-col p-2 mx-10">
+                                <button wire:click='putEstadoTerminado' type="submmit" class="aling-center border-gray-400 bg-red-300 hover:gb-red-500 rounded" tabindex="10">Marcar como terminado</button>
+                            </div>
+                        @endif
                         <div class="flex flex-col p-2 mx-10">
                             <label id="nºpedido"  class="form-label">Pedido nº {{ $idCabPed }}</label>
                         </div>
@@ -77,6 +79,27 @@
                             <label id="importe"  class="form-label">Importe {{ $importe }}</label>
                         </div>
                     @endif
+                </div>
+                <div class="bg-white-500 rounded-lb shadow overflow-hiden p-4">
+                    <div class="flex flex-col p-2 mx-10">
+                        <form class="form-horizontal" method="POST" action="{{ route('upPdf') }}" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="form-group{{ $errors->has('pdf') ? ' has-error' : '' }}">
+                                <div class="mb-2">
+                                    <div class="mb-3" style="display:none">
+                                        <input id="idx" name="idx" value="{{$idCabPed}}"></label>
+                                    </div>
+                                    <input id="pdf" type="file" class="form-control" name="pdf" accept=".pdf" value="{{ old('pdf') }}" required>
+                                    @if ($errors->has('pdf'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('pdf') }}</strong>
+                                        </span>
+                                    @endif
+                                    <button type="submit" class="border-gray-200 bg-red-300 hover:gb-red-500 rounded">Subir pdf</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

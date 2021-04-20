@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
 
 class correo extends Mailable
 {
@@ -34,6 +35,13 @@ class correo extends Mailable
     {
         $num=$this->nPed;
         $artsPedi=$this->artsPedi;
-        return $this->view('mails.correo',compact('num','artsPedi'));
+        $pdf=$num.'.pdf';
+        if (Storage::exists($pdf)){
+            return $this->view('mails.correo',compact('num','artsPedi'))->attachFromStorage($pdf);  
+            dd('si'.$pdf);
+        }else{
+            dd('no'.$pdf);
+            return $this->view('mails.correo',compact('num','artsPedi'));  
+        }
     }
 }

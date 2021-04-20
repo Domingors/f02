@@ -19,57 +19,75 @@ class GestionPedidosComponent extends Component
     public $itemsPagina=0;
     protected $usuarios, $cPedidos, $estados;
     public $nLPeds;
+    public $isJefe=false;
+    public $users;
 
     public function render()
     {
         if($this->idUser==null)
         $this->idUser=Auth::user()->id;
+
         $this->is_admin=Auth::user()->is_admin;
+        $this->isJefe=Auth::user()->is_jefe;
 
         $this->usuarios=User::all();
 
         $this->reloadPeds();
         $isAdmin=$this->is_admin;
+        $isJ=$this->isJefe;
         $users=$this->usuarios;
         $estads=$this->estados;
         $cPeds=$this->cPedidos;
+        $idU=$this->idUser;
+        $userss=$this->users;
 
-        return view('livewire.gestion-pedidos-component',compact('isAdmin','users','estads','cPeds'));
+        return view('livewire.gestion-pedidos-component',compact('idU','userss','isAdmin','isJ','users','estads','cPeds'));
     }
     public function updatedIdUser()
     {
         $this->reloadPeds();
         $isAdmin=$this->is_admin;
+        $isJ=$this->isJefe;
         $users=$this->usuarios;
         $estads=$this->estados;
         $cPeds=$this->cPedidos;
 
-        return view('livewire.gestion-pedidos-component',compact('isAdmin','users','estads','cPeds'));
+        return view('livewire.gestion-pedidos-component',compact('isAdmin','isJ','users','estads','cPeds'));
     }
     public function updatedEstado()
     {
         $this->reloadPeds();
         $isAdmin=$this->is_admin;
+        $isJ=$this->isJefe;
         $users=$this->usuarios;
         $estads=$this->estados;
         $cPeds=$this->cPedidos;
 
-        return view('livewire.gestion-pedidos-component',compact('isAdmin','users','estads','cPeds'));
+        return view('livewire.gestion-pedidos-component',compact('isAdmin','isJ','users','estads','cPeds'));
     }
     public function reloadPeds(){
         $this->estados=[[1,'Incompleto'],[2,'Terminado'],[3,'Entregado']];
-/*
-        $this->cPedidos=DB::table('pedidos')
-        ->Join('l_pedidos', 'pedidos.id', '=', 'l_pedidos.pedido_id')
-        ->where('pedidos.user_id',$this->idUser)
-        ->Where('pedidos.estado',$this->estado)
-        ->orderBy('pedidos.id','DESC')
-        ->paginate();
-*/
-        $this->cPedidos=Pedido::orderBy('id','desc')
-        ->where('user_id',$this->idUser)
-        ->Where('estado',$this->estado)
-        ->paginate();
+
+        if($this->is_admin){
+            $this->cPedidos=Pedido::orderBy('id','desc')
+            ->Where('estado',$this->estado)
+            ->paginate();
+        }else{
+            if($this->isJefe){
+                $this->users=User::where('grupo',$this->idUser)
+                ->orwhere('id',$this->idUser)
+                ->select('id')->pluck('id');
+
+                $this->cPedidos=Pedido::whereIn('user_id',$this->users)
+                ->Where('estado',$this->estado)
+                ->paginate();
+            }else{
+                $this->cPedidos=Pedido::orderBy('id','desc')
+                ->where('user_id',$this->idUser)
+                ->Where('estado',$this->estado)
+                ->paginate();
+            }
+        }
 
         if(!empty(($this->cPedidos)[0])){
             if($this->idCabPed==null)

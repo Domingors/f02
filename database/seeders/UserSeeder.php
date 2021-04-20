@@ -41,13 +41,43 @@ class UserSeeder extends Seeder
             'id'=>10,
             'name'=>'SC',
             'email'=>'santacruz@1.es',
-            'password'=>bcrypt('12345678')
+            'password'=>bcrypt('12345678'),
+            'is_jefe'=>true
+        ]);
+        User::create([
+            'id'=>1002,
+            'name'=>'SC2',
+            'email'=>'santacruz@2.es',
+            'password'=>bcrypt('12345678'),
+            'grupo'=>10
+        ]);
+        User::create([
+            'id'=>1003,
+            'name'=>'SC3',
+            'email'=>'santacruz@3.es',
+            'password'=>bcrypt('12345678'),
+            'grupo'=>10
         ]);
         User::create([
             'id'=>20,
             'name'=>'GC',
             'email'=>'grancanaria@1.es',
-            'password'=>bcrypt('12345678')
+            'password'=>bcrypt('12345678'),
+            'is_jefe'=>true
+        ]);
+        User::create([
+            'id'=>2002,
+            'name'=>'GC2',
+            'email'=>'grancanaria@2.es',
+            'password'=>bcrypt('12345678'),
+            'grupo'=>20
+        ]);
+        User::create([
+            'id'=>2003,
+            'name'=>'GC3',
+            'email'=>'grancanaria@3.es',
+            'password'=>bcrypt('12345678'),
+            'grupo'=>20
         ]);
     }
 }
