@@ -38,9 +38,7 @@ class correo extends Mailable
         $pdf=$num.'.pdf';
         if (Storage::exists($pdf)){
             return $this->view('mails.correo',compact('num','artsPedi'))->attachFromStorage($pdf);  
-            dd('si'.$pdf);
         }else{
-            dd('no'.$pdf);
             return $this->view('mails.correo',compact('num','artsPedi'));  
         }
     }

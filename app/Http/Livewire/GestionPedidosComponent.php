@@ -9,6 +9,7 @@ use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class GestionPedidosComponent extends Component
 {
@@ -21,6 +22,7 @@ class GestionPedidosComponent extends Component
     public $nLPeds;
     public $isJefe=false;
     public $users;
+    public $hasAdj=array();
 
     public function render()
     {
@@ -40,6 +42,7 @@ class GestionPedidosComponent extends Component
         $cPeds=$this->cPedidos;
         $idU=$this->idUser;
         $userss=$this->users;
+        $this->tieneAdjunto();
 
         return view('livewire.gestion-pedidos-component',compact('idU','userss','isAdmin','isJ','users','estads','cPeds'));
     }
@@ -126,6 +129,22 @@ class GestionPedidosComponent extends Component
         $this->reloadPeds();
 //        return redirect('GestionPedidos');
     }
+    public function tieneAdjunto(){
+        $this->hasAdj=array();
+        foreach ($this->cPedidos as $cP){
+            if(Storage::disk('mis_pdfs')->exists($cP->id.'.pdf')){
+                $this->hasAdj[$cP->id]=true;
+            }else{
+                $this->hasAdj[$cP->id]=false;
+            }
+        }
+    }
+    
+    public function delAdjunto($id){
+        Storage::disk('mis_pdfs')->delete($id.'.pdf');
+        return redirect('GestionPedidos');
+    }
+
     public function makePdf($id)
     {
     }
@@ -134,6 +153,7 @@ class GestionPedidosComponent extends Component
         $Pedi=Pedido::find($id);
 
         $Pedi->delete();
+        Storage::delete($id.'.pdf');
         return redirect('GestionPedidos');
     }
 }

@@ -11,6 +11,7 @@ use Psy\Command\WhereamiCommand;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\correo;
+use Illuminate\Support\Facades\Storage;
 
 class PedidoComponent extends Component
 {
@@ -26,6 +27,7 @@ class PedidoComponent extends Component
     public $importe=0.00;
     public $isJefe=false;
     public $grupo;
+    public $hasAdj=false;
 
     protected $rules=[
         'pedido_id'=>'required',
@@ -88,6 +90,7 @@ class PedidoComponent extends Component
         $cPeds=$this->cPedidos;
         $isJ=$this->isJefe;
         $this->totalizar();
+        $this->tieneAdjunto();
         return view('livewire.pedido-component',compact('isJ','lPeds','cPeds','arts'));
 
     }
@@ -221,12 +224,26 @@ class PedidoComponent extends Component
 
         return redirect('Pedidos');
     }
+    
+    public function tieneAdjunto(){
+        if(Storage::disk('mis_pdfs')->exists($this->idCabPed.'.pdf')){
+            $this->hasAdj=true;
+        }else{
+            $this->hasAdj=false;
+        }
+//        return Storage::exists($id.'.pdf');
+    }
+    public function delAdjunto($id){
+        Storage::disk('mis_pdfs')->delete($id.'.pdf');
+        return redirect('Pedidos');
+    }
 
     public function destroy($id)
     {
         $lPedi=LPedido::find($id);
 
         $lPedi->delete();
+        Storage::delete($id.'.pdf');
         $this->totalizar();
         $this->reset(['isJefe','codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
 

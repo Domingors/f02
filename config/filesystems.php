@@ -30,6 +30,11 @@ return [
 
     'disks' => [
 
+        'mis_pdfs' => [
+            'driver' => 'local',
+            'root' => public_path('pdf'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

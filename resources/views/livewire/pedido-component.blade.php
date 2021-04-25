@@ -1,4 +1,6 @@
+
 <div>
+
     <div class="py-12  flex items-center justify-between ">
         <div class="max-w-8xl mx-auto">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex">
@@ -85,17 +87,23 @@
                         <form class="form-horizontal" method="POST" action="{{ route('upPdf') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group{{ $errors->has('pdf') ? ' has-error' : '' }}">
-                                <div class="mb-2">
+                                <div class="mb-2 flex">
                                     <div class="mb-3" style="display:none">
                                         <input id="idx" name="idx" value="{{$idCabPed}}"></label>
                                     </div>
-                                    <input id="pdf" type="file" class="form-control" name="pdf" accept=".pdf" value="{{ old('pdf') }}" required>
-                                    @if ($errors->has('pdf'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('pdf') }}</strong>
-                                        </span>
+                                    @if($hasAdj)
+                                        @livewire('live-php-modal',['idP'=>$idCabPed])
+                                        <!--<a href="#" type="button" wire:click="verAdjunto({{ $idCabPed }})" class="bg-blue-100 hover:gb-blue-300 rounded">Ver adjunto</a>-->
+                                        <a href="#" type="button" wire:click="delAdjunto({{ $idCabPed }})" class="bg-red-100 hover:gb-red-300 rounded">Borrar adjunto</a>
+                                    @else
+                                        <input id="pdf" type="file" class="form-control" name="pdf" accept=".pdf" value="{{ old('pdf') }}" required>
+                                        @if ($errors->has('pdf'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('pdf') }}</strong>
+                                            </span>
+                                        @endif
+                                        <button type="submit" class="border-gray-200 bg-red-300 hover:gb-red-500 rounded">Subir pdf</button>
                                     @endif
-                                    <button type="submit" class="border-gray-200 bg-red-300 hover:gb-red-500 rounded">Subir pdf</button>
                                 </div>
                             </div>
                         </form>
@@ -154,7 +162,6 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $lped->cantidad }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $lped->precio }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-<!--                                        <a href="#" type="button" wire:click="edit({{ $lped }})" class="bg-green-300 hover:gb-green-700 rounded">Editar</a>-->
                                         <a href="#" type="button" wire:click='destroy({{ $lped->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>
                                     </td>
                                 </tr>
@@ -166,4 +173,3 @@
         </div>
     </div>
 </div>
-

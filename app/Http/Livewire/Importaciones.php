@@ -41,7 +41,7 @@ class Importaciones extends Component
       $nombre = $id.'.pdf';
 
       //indicamos que queremos guardar un nuevo archivo en el disco local
-      Storage::disk('local')->put($nombre,  File::get($file));
+      Storage::disk('mis_pdfs')->put($nombre,  File::get($file));
 
         //Recibimos el archivo y lo guardamos en la carpeta storage/app/public
 //        $request->file('pdf')->store('public');

@@ -71,6 +71,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $cPed->user_id }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $cPed->estado }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex">
                                         @if($isAdmin)
                                             @if($estado==1)
                                                 <a href="#" type="button" wire:click="putEstadoEntregado({{ $cPed->id }})" class="bg-green-200 hover:gb-green-700 rounded">Marcar entregado</a>
@@ -103,6 +104,12 @@
                                                 <a href="#" type="button" wire:click='destroy({{ $cPed->id }})' class="bg-red-300 hover:gb-red-700 rounded">Borrar</a>
                                             @endif
                                         @endif
+                                        @if($hasAdj[$cPed->id])
+                                            <!--<a href="#" type="button" wire:click="verAdjunto({{ $cPed->id }})" class="bg-blue-100 hover:gb-blue-300 rounded">Ver adjunto</a>-->
+                                            <a href="#" type="button" wire:click="delAdjunto({{ $cPed->id }})" class="bg-red-100 hover:gb-red-300 rounded">Borrar adjunto</a>
+                                            @livewire('live-php-modal',['idP'=>$cPed->id])
+                                        @endif
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
