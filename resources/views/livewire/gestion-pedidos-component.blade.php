@@ -106,8 +106,8 @@
                                         @endif
                                         @if($hasAdj[$cPed->id])
                                             <!--<a href="#" type="button" wire:click="verAdjunto({{ $cPed->id }})" class="bg-blue-100 hover:gb-blue-300 rounded">Ver adjunto</a>-->
-                                            <a href="#" type="button" wire:click="delAdjunto({{ $cPed->id }})" class="bg-red-100 hover:gb-red-300 rounded">Borrar adjunto</a>
                                             @livewire('live-php-modal',['idP'=>$cPed->id])
+                                            <a href="#" type="button" wire:click="delAdjunto({{ $cPed->id }})" class="bg-red-100 hover:gb-red-300 rounded">Borrar adjunto</a>
                                         @endif
                                         </div>
                                     </td>
