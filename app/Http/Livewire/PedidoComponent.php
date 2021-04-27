@@ -218,8 +218,8 @@ class PedidoComponent extends Component
 
 
 //        $this->totalizar();
-//        Mail::to('pedidos@laesperanzaimpresores.com')->send(new correo($this->idCabPed,$artsPedi));
-        Mail::to('domingors@gmail.com')->send(new correo($this->idCabPed,$artsPedi));
+        Mail::to('pedidos@laesperanzaimpresores.com')->send(new correo($this->idCabPed,$artsPedi));
+//        Mail::to('domingors@gmail.com')->send(new correo($this->idCabPed,$artsPedi));
         $this->reset(['isJefe','codigo', 'descripcion', 'cantidad', 'precio', 'precio1', 'precio2', 'precio3', 'precio4', 'precio5', 'precio6', 'tramo1', 'tramo2', 'tramo3', 'tramo4', 'tramo5', 'tramo6', 'articuloUser_id','lPedido_id','pedido_id','idUser','accion']);
 
         return redirect('Pedidos');
