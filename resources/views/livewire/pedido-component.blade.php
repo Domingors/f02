@@ -4,70 +4,70 @@
     <div class="py-12  flex items-center justify-between ">
         <div class="max-w-8xl mx-auto">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex">
-                <div class="bg-white-500 rounded-lb shadow hoverflow-hiden p-4">
-                    @if($precio1>0)
-                        <div class="mb-3" style="display:none">
-                            <label for="" class="form-label">Id</label>
-                            <input wire:model='lPedido_id' type="text" id="id" name='id' class="form-label" tabindex="1">
-                            @error('id')<p>{{ $message }}</p>@enderror
-                        </div>
-                        <div class="mb-3" style="display:none">
-                            <label for="" class="form-label">Pedido_id</label>
-                            <label wire:model='pedido_id' id="pedido_id" name='pedido_id' class="form-label">{{ $pedido_id }}</label>
-                            @error('pedido_id')<p class="text-xs text-red-500 italic">{{ $message }}</p>@enderror
-                        </div>
-                        <div class="mb-3" style="display:none">
-                            <label for="" class="form-label">ArticuloUser_id</label>
-                            <label wire:model='articuloUser_id' id="articuloUser_id" name='articuloUser_id' class="form-label">{{ $articuloUser_id }}</label>
-                            @error('articuloUser_id')<p>{{ $message }}</p>@enderror
-                        </div>
-                        <div class="mb-3" style="display:none">
-                            <label for="" class="form-label">Código</label>
-                            <label wire:model='codigo' id="codigo" name='codigo' class="form-label">{{ $codigo }}</label>
-                            @error('codigo')<p>{{ $message }}</p>@enderror
-                        </div>
-                        <div class="mb-3">
-                            <label id="descripcion" type="text" class="bg-green-100" style="width: 1340px;">{{$descripcion}}</label>
-                            @error('descripcion')<p>{{ $message }}</p>@enderror
-                        </div>
-                        <div class="mb-3" style="display:none">
-                            <label for="" class="form-label">Cantidad</label>
-                            <input wire:model='cantidad' type="number" id="cantidad"  class="form-control" tabindex="6">
-                            @error('cantidad')<p>{{ $message }}</p>@enderror
-                        </div>
-                        <div class="mb-3" style="display:none">
-                            <label for="" class="form-label">Precio</label>
-                            <label wire:model='precio' id="precio"  step="any" value="0.00" class="form-label">{{ $precio }}</label>
-                            @error('precio')<p>{{ $message }}</p>@enderror
-                        </div>
-                        <div class="bg-gray-100 flex p-2  flex items-center justify-between">
-                            <div class="align=left">
-                                <label for="" class="form-label">Cantidad:  </label>
-                                <button wire:click='store1' title="precio: {{$precio1}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo1}}</button>
-                                @if($precio1!=$precio2)
-                                    <button wire:click='store2' title="precio: {{$precio2}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo2}}</button>
-                                        @if($precio2!=$precio3)
-                                            <button wire:click='store3' title="precio: {{$precio3}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo3}}</button>
-                                            @if($precio3!=$precio4)
-                                                <button wire:click='store4' title="precio: {{$precio4}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo4}}</button>
-                                            @if($precio4!=$precio5)
-                                                <button wire:click='store5' title="precio: {{$precio5}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo5}}</button>
-                                                @if($precio5!=$precio6)
-                                                    <button wire:click='store6' title="precio: {{$precio6}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo6}}</button>
+                @if($lPeds != null)
+                    <div class="bg-white-500 rounded-lb shadow hoverflow-hiden p-4">
+                        @if($precio1>0)
+                            <div class="mb-3" style="display:none">
+                                <label for="" class="form-label">Id</label>
+                                <input wire:model='lPedido_id' type="text" id="id" name='id' class="form-label" tabindex="1">
+                                @error('id')<p>{{ $message }}</p>@enderror
+                            </div>
+                            <div class="mb-3" style="display:none">
+                                <label for="" class="form-label">Pedido_id</label>
+                                <label wire:model='pedido_id' id="pedido_id" name='pedido_id' class="form-label">{{ $pedido_id }}</label>
+                                @error('pedido_id')<p class="text-xs text-red-500 italic">{{ $message }}</p>@enderror
+                            </div>
+                            <div class="mb-3" style="display:none">
+                                <label for="" class="form-label">ArticuloUser_id</label>
+                                <label wire:model='articuloUser_id' id="articuloUser_id" name='articuloUser_id' class="form-label">{{ $articuloUser_id }}</label>
+                                @error('articuloUser_id')<p>{{ $message }}</p>@enderror
+                            </div>
+                            <div class="mb-3" style="display:none">
+                                <label for="" class="form-label">Código</label>
+                                <label wire:model='codigo' id="codigo" name='codigo' class="form-label">{{ $codigo }}</label>
+                                @error('codigo')<p>{{ $message }}</p>@enderror
+                            </div>
+                            <div class="mb-3">
+                                <label id="descripcion" type="text" class="bg-green-100" style="width: 1340px;">{{$descripcion}}</label>
+                                @error('descripcion')<p>{{ $message }}</p>@enderror
+                            </div>
+                            <div class="mb-3" style="display:none">
+                                <label for="" class="form-label">Cantidad</label>
+                                <input wire:model='cantidad' type="number" id="cantidad"  class="form-control" tabindex="6">
+                                @error('cantidad')<p>{{ $message }}</p>@enderror
+                            </div>
+                            <div class="mb-3" style="display:none">
+                                <label for="" class="form-label">Precio</label>
+                                <label wire:model='precio' id="precio"  step="any" value="0.00" class="form-label">{{ $precio }}</label>
+                                @error('precio')<p>{{ $message }}</p>@enderror
+                            </div>
+                            <div class="bg-gray-100 flex p-2  flex items-center justify-between">
+                                <div class="align=left">
+                                    <label for="" class="form-label">Cantidad:  </label>
+                                    <button wire:click='store1' title="precio: {{$precio1}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo1}}</button>
+                                    @if($precio1!=$precio2)
+                                        <button wire:click='store2' title="precio: {{$precio2}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo2}}</button>
+                                            @if($precio2!=$precio3)
+                                                <button wire:click='store3' title="precio: {{$precio3}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo3}}</button>
+                                                @if($precio3!=$precio4)
+                                                    <button wire:click='store4' title="precio: {{$precio4}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo4}}</button>
+                                                @if($precio4!=$precio5)
+                                                    <button wire:click='store5' title="precio: {{$precio5}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo5}}</button>
+                                                    @if($precio5!=$precio6)
+                                                        <button wire:click='store6' title="precio: {{$precio6}}" type="submmit" class="border-gray-200 bg-blue-300 hover:gb-blue-500 rounded" tabindex="8">{{$tramo6}}</button>
+                                                    @endif
                                                 @endif
                                             @endif
                                         @endif
                                     @endif
-                                @endif
-                                <label for="" class="form-label">  </label>
+                                    <label for="" class="form-label">  </label>
+                                </div>
+                                <div class="align=right">
+                                    <button wire:click='removeEdit' type="submmit" class="border-gray-200 bg-red-100 hover:gb-red-300 rounded" tabindex="8">Cancelar</button>
+                                </div>
                             </div>
-                            <div class="align=right">
-                                <button wire:click='removeEdit' type="submmit" class="border-gray-200 bg-red-100 hover:gb-red-300 rounded" tabindex="8">Cancelar</button>
-                            </div>
-                        </div>
-                    @endif
-                </div>
-                @if($lPeds != null)
+                        @endif
+                    </div>
                     <div class="bg-white-500 rounded-lb shadow overflow-hiden p-4">
                         @if ($isJ)
                             <div class="flex flex-col p-2 mx-10">

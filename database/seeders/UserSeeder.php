@@ -39,43 +39,43 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             'id'=>10,
-            'name'=>'SC',
+            'name'=>'Santa Cruz',
             'email'=>'santacruz@1.es',
             'password'=>bcrypt('12345678'),
             'is_jefe'=>true
         ]);
         User::create([
             'id'=>1002,
-            'name'=>'SC2',
+            'name'=>'Santa Cruz2',
             'email'=>'santacruz@2.es',
             'password'=>bcrypt('12345678'),
             'grupo'=>10
         ]);
         User::create([
             'id'=>1003,
-            'name'=>'SC3',
+            'name'=>'Santa Cruz3',
             'email'=>'santacruz@3.es',
             'password'=>bcrypt('12345678'),
             'grupo'=>10
         ]);
         User::create([
             'id'=>20,
-            'name'=>'GC',
-            'email'=>'grancanaria@1.es',
+            'name'=>'Las Palmas',
+            'email'=>'laspalmas@1.es',
             'password'=>bcrypt('12345678'),
             'is_jefe'=>true
         ]);
         User::create([
             'id'=>2002,
-            'name'=>'GC2',
-            'email'=>'grancanaria@2.es',
+            'name'=>'Las Palmas2',
+            'email'=>'laspalmas@2.es',
             'password'=>bcrypt('12345678'),
             'grupo'=>20
         ]);
         User::create([
             'id'=>2003,
-            'name'=>'GC3',
-            'email'=>'grancanaria@3.es',
+            'name'=>'Las Palmas3',
+            'email'=>'laspalmas@3.es',
             'password'=>bcrypt('12345678'),
             'grupo'=>20
         ]);

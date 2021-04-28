@@ -17,9 +17,10 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-gray-200 background-size: cover">
         <x-jet-banner />
-        <div class="min-h-screen bg-gray-100 background-size: cover"   Style= "background-image:url('{{ asset('images/b.jpg') }}'); background-size: cover;border-radius: 5px;position:relative">
+        <div>
+            <!--<div class="min-h-screen bg-gray-100 background-size: cover"   Style= "background-image:url('{{ asset('images/b.jpg') }}'); background-size: cover;border-radius: 5px;position:relative">-->
             @livewire('navigation-menu')
 
             <!-- Page Heading

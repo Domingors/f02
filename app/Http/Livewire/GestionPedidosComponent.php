@@ -41,10 +41,9 @@ class GestionPedidosComponent extends Component
         $estads=$this->estados;
         $cPeds=$this->cPedidos;
         $idU=$this->idUser;
-        $userss=$this->users;
         $this->tieneAdjunto();
 
-        return view('livewire.gestion-pedidos-component',compact('idU','userss','isAdmin','isJ','users','estads','cPeds'));
+        return view('livewire.gestion-pedidos-component',compact('idU','isAdmin','isJ','users','estads','cPeds'));
     }
     public function updatedIdUser()
     {
@@ -74,6 +73,7 @@ class GestionPedidosComponent extends Component
         if($this->is_admin){
             $this->cPedidos=Pedido::orderBy('id','desc')
             ->Where('estado',$this->estado)
+            ->orderBy('id','desc')
             ->paginate();
         }else{
             if($this->isJefe){
@@ -83,12 +83,23 @@ class GestionPedidosComponent extends Component
 
                 $this->cPedidos=Pedido::whereIn('user_id',$this->users)
                 ->Where('estado',$this->estado)
+                ->orderBy('id','desc')
                 ->paginate();
             }else{
-                $this->cPedidos=Pedido::orderBy('id','desc')
-                ->where('user_id',$this->idUser)
+                $this->users=User::where('id',$this->idUser)
+                ->select('id')->pluck('id');
+
+                $this->cPedidos=Pedido::whereIn('user_id',$this->users)
                 ->Where('estado',$this->estado)
+                ->orderBy('id','desc')
                 ->paginate();
+            }
+        }
+        $i=0;
+        $this->nUser=collect([]);
+        for ($i=0;$i<count($this->cPedidos);$i++){
+            if(!$this->tieneLineas(($this->cPedidos)[$i]->id)){
+                unset(($this->cPedidos)[$i]);
             }
         }
 
@@ -100,6 +111,7 @@ class GestionPedidosComponent extends Component
     }
     public function tieneLineas($id){
         $this->nLPeds= count(LPedido::where('id',$id)->get());
+        return $this->nLPeds>0;
     }
 
     public function putEstadoEntregado($id)
@@ -129,6 +141,7 @@ class GestionPedidosComponent extends Component
         $this->reloadPeds();
 //        return redirect('GestionPedidos');
     }
+
     public function tieneAdjunto(){
         $this->hasAdj=array();
         foreach ($this->cPedidos as $cP){

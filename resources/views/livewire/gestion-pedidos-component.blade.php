@@ -5,12 +5,14 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex">
                     <div class="bg-white-500 rounded-lb shadow hoverflow-hiden p-4">
                         <div class="form-group">
-                            <h2>Usuarios</h2>
-                            <select wire:model="idUser" class="form-control" name="idUser" required >
-                                @foreach($users as $user)
-                                    <option  value="{{$user->id}}"> {{$user->name}}</option>
-                                @endforeach
-                            </select>
+                            @if($users != null)
+                                <h2>Usuarios</h2>
+                                <select wire:model="idUser" class="form-control" name="idUser" required >
+                                    @foreach($users as $user)
+                                        <option  value="{{$user->id}}"> {{$user->name}}</option>
+                                    @endforeach
+                                </select>
+                            @endif
                         </div>
                     </div>
                     <div class="bg-white-500 rounded-lb shadow overflow-hiden p-4">
@@ -68,7 +70,7 @@
                             @foreach ($cPeds as $cPed)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $cPed->id }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $cPed->user_id }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $cPed->user_name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $cPed->estado }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex">

@@ -19,7 +19,7 @@ class PedidoComponent extends Component
     public $itemsPagina=100,$itemsArtsPagina=100;
     public $codigo, $descripcion, $cantidad, $precio, $articuloUser_id,$lPedido_id;
     public $precio1, $precio2, $precio3, $precio4, $precio5, $precio6, $tramo1, $tramo2, $tramo3, $tramo4, $tramo5, $tramo6;
-    public $idUser, $idCabPed;
+    public $idUser, $nameUser, $idCabPed;
     public $p;
     protected $cPedidos,$lPedidos;
     public $busqueda, $busquedaArt;
@@ -50,6 +50,7 @@ class PedidoComponent extends Component
     public function render()
     {
         $this->idUser=Auth::user()->id;
+        $this->nameUser=Auth::user()->name;
         $this->isJefe=Auth::user()->is_jefe;
         $this->grupo=Auth::user()->grupo;
 
@@ -96,7 +97,7 @@ class PedidoComponent extends Component
     }
     public function nuevoPedido()
     {
-        Pedido::create(['user_id'=>$this->idUser,]);
+        Pedido::create(['user_id'=>$this->idUser,'user_name'=>$this->nameUser,]);
         
         $this->verUltCPedido();
     }

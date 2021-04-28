@@ -16,6 +16,7 @@ class CreatePedidosTable extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->require;
+            $table->string('user_name');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->enum('estado',[1,2,3])->default(1);
             $table->timestamps();
